@@ -33,7 +33,7 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
                 >
                     <AiOutlineMenu size={20} />
                     <div className="hidden md:block">
-                        <Avatar />
+                        <Avatar src={currentUser?.image} />
                     </div>
                 </div>
             </div>
