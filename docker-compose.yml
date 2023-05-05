@@ -1,13 +1,13 @@
 version: "3"
 
 services:
-   node-server:
-     tty: true
-     build:
-        context: .
-        dockerfile: docker/nodejs/Dockerfile
-     ports:
-       - 4000:4000
-     restart: unless-stopped
-     volumes:
-        - ./:/app
+  node-server:
+    tty: true
+    build:
+      context: .
+      dockerfile: docker/nodejs/Dockerfile
+    ports:
+      - 4100:4100
+    restart: unless-stopped
+    volumes:
+      - ./:/app
