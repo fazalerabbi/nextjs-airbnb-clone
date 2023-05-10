@@ -24,7 +24,6 @@ enum STEPS {
     PRICE = 5
 }
 
-
 const RentModal = () => {
     const router = useRouter();
     const rentModal = useRentModal();
@@ -100,12 +99,12 @@ const RentModal = () => {
 
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
         if (step !== STEPS.PRICE) {
-            return onNext;
+            return onNext();
         }
 
         setIsLoading(true);
 
-        axios.post('/api/listing', data)
+        axios.post('/api/listings', data)
             .then(() => {
                 toast.success('Listing Created!');
                 router.refresh();
@@ -119,7 +118,6 @@ const RentModal = () => {
             .finally(() => {
                 setIsLoading(false);
             });
-
     }
 
     let bodyContent = (
